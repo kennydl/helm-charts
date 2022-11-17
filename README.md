@@ -13,23 +13,28 @@ $ helm package deployment
 $ helm repo index .
 ```
 
-## Usage
+# Usage
 
 [Helm](https://helm.sh) must be installed to use the charts.  Please refer to
 Helm's [documentation](https://helm.sh/docs) to get started.
 
 Once Helm has been set up correctly, add the repo as follows:
 
-  helm repo add <alias> https://<orgname>.github.io/helm-charts
+  helm repo add my-charts https://kennydl.github.io/helm-charts
 
 If you had already added this repo earlier, run `helm repo update` to retrieve
-the latest versions of the packages.  You can then run `helm search repo
-<alias>` to see the charts.
+the latest versions of the packages.
 
-To install the <chart-name> chart:
+## To list all charts by alias:
+> helm search repo my-charts
 
-    helm install my-<chart-name> <alias>/<chart-name>
+## To remove an alias repo:
+> helm repo remove my-charts
 
-To uninstall the chart:
+## To install a chart:
 
-    helm delete my-<chart-name>
+> helm install [release-name] my-charts/[chart-name]
+
+## To uninstall the chart:
+
+> helm delete [release-name]
