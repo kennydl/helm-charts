@@ -1,0 +1,132 @@
+# Default values for deployment.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+name: myname
+namespace: mynamespace
+
+replicaCount: 1
+image: image-name:tag
+imagePullSecrets: image-pull-secrets
+
+# nameOverride: ""
+# fullnameOverride: ""
+
+# serviceAccount:
+#   # Specifies whether a service account should be created
+#   create: true
+
+# securityContext:
+#   seccompProfile:
+#     type: RuntimeDefault
+#   runAsUser: 5000
+#   runAsGroup: 5000
+#   fsGroup: 5000
+#   supplementalGroups: [5000]
+
+# service:
+#   type: ClusterIP
+#   port: 80
+#   targetPort: 80
+
+# ingress:
+#   path: "/mypath"
+#   port: 80 # 80 default
+#   routemiddlewares:
+#     - name: hsts-header
+#       namespace: dns
+#     - name: remove-metrics
+#       namespace: dns
+#   stickysession:
+#     cookie: {}
+
+# readinessProbe:
+#   failureThreshold: 3
+#   httpGet:
+#     path: /metrics
+#     port: 2112
+#     scheme: HTTP
+#   initialDelaySeconds: 15
+#   periodSeconds: 15
+#   successThreshold: 1
+#   timeoutSeconds: 3
+
+# livenessProbe:
+#   failureThreshold: 5
+#   httpGet:
+#     path: /metrics
+#     port: 2112
+#     scheme: HTTP
+#   initialDelaySeconds: 15
+#   periodSeconds: 15
+#   successThreshold: 1
+#   timeoutSeconds: 3
+
+# startupProbe:
+#   failureThreshold: 5
+#   httpGet:
+#     path: /metrics
+#     port: 2112
+#     scheme: HTTP
+#   initialDelaySeconds: 15
+#   periodSeconds: 15
+#   successThreshold: 1
+#   timeoutSeconds: 3
+
+# resources:
+#   limits:
+#     cpu: 250m
+#     memory: 512Mi
+#   requests:
+#     cpu: 250m
+#     memory: 512Mi
+
+# autoscaling:
+#   minReplicas: 1
+#   maxReplicas: 1
+#   averageUtilization: 80
+
+# nodeSelector:
+#   kubernetes.io/os: linux
+
+# tolerations:
+# - effect: NoSchedule
+#   key: type
+#   operator: Equal
+#   value: high-iops
+
+# sidecars:
+#   sidecar:
+#     name: sidecar-name
+#     resources:
+#       requests:
+#         cpu: 10m
+#         memory: 50Mi
+#       limits:
+#         cpu: 10m
+#         memory: 50Mi
+#     image:
+#       repository: sidecar-container-registry
+
+# configmap:
+#    key.name: __VALUE__
+
+# secret:
+#   mysecret: __SECRET_VALUE__
+
+# volumes:
+# - configMap:
+#     name: github-repository
+#   name: my-volume
+
+# volumeMounts:
+# - mountPath: /usr/share/nginx/html/assets/
+#   name: my-volume
+
+resources:
+  limits:
+    cpu: 250m
+    memory: 512Mi
+  requests:
+    cpu: 250m
+    memory: 512Mi

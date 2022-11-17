@@ -1,0 +1,16 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: {{ required "Missing .Values.name" .Values.name }}
+  namespace: {{ required "Missing .Values.namespace" .Values.namespace }}
+  labels:
+    app: {{ required "Missing .Values.name" .Values.name }}
+spec:
+  {{- if .Values.service }}
+  selector:
+    app: {{ required "Missing .Values.name" .Values.name }}
+  type: {{ required "Missing .Values.service.type" .Values.service.type }}
+  ports:
+  - port: {{ required "Missing .Values.service.port" .Values.service.port }}
+    targetPort: {{ required "Missing .Values.service.targetPort" .Values.service.targetPort }}
+  {{- end}}
