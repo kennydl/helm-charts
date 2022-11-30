@@ -26,14 +26,14 @@ spec:
         - name: {{ required "Missing .Values.imagePullSecret" .Values.imagePullSecret }}
       {{- if .Values.securityContext }}
       securityContext: {{- toYaml .Values.securityContext | nindent 8 }}
-      {{- else }}
-      securityContext:
-        seccompProfile:
-          type: RuntimeDefault
-        runAsUser: 5000
-        runAsGroup: 5000
-        fsGroup: 5000
-        supplementalGroups: [5000]
+      # {{- else }}
+      # securityContext:
+      #   seccompProfile:
+      #     type: RuntimeDefault
+      #   runAsUser: 5000
+      #   runAsGroup: 5000
+      #   fsGroup: 5000
+      #   supplementalGroups: [5000]
       {{- end }}
       {{- with .Values.volumes }}
       volumes:
