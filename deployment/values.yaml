@@ -29,6 +29,7 @@ imagePullSecrets: image-pull-secrets
 #   targetPort: 80
 
 # ingress:
+#   host: "hostname"
 #   path: "/mypath"
 #   port: 80 # 80 default
 #   routemiddlewares:

@@ -9,7 +9,7 @@ metadata:
 spec:
   routes:
   - kind: Rule
-    match: Host(`{{ include "ingress.host" . }}`) && PathPrefix(`{{ required "Missing .Values.ingress.path" .Values.ingress.path }}`)
+    match: Host(`{{ required "Missing .Values.ingress.host" .Values.ingress.host }}`) && PathPrefix(`{{ required "Missing .Values.ingress.path" .Values.ingress.path }}`)
     {{- if .Values.ingress.routemiddlewares }}
     middlewares: {{- toYaml .Values.ingress.routemiddlewares | nindent 4 }}
     {{- else }}
