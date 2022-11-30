@@ -47,8 +47,8 @@ spec:
         {{- end }}
         image: {{ required "Missing .Values.image" .Values.image }}
         imagePullPolicy: Always
-        securityContext:
-          allowPrivilegeEscalation: false
+        # securityContext:
+        #   allowPrivilegeEscalation: false
         resources:
           limits:
             cpu: {{ required "Missing .Values.resources.limits.cpu" .Values.resources.limits.cpu }}
