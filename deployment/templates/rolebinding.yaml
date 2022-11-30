@@ -7,7 +7,7 @@ metadata:
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: {{ required "Missing .Values.namespace" .Values.clusterRole }}
+  name: {{ required "Missing .Values.serviceAccount.clusterRole" .Values.serviceAccount.clusterRole }}
 subjects:
 - kind: ServiceAccount
   name: {{ required "Missing .Values.name" .Values.name }}
