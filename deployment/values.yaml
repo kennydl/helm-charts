@@ -13,8 +13,7 @@ imagePullSecrets: image-pull-secrets
 # fullnameOverride: ""
 
 # serviceAccount:
-#   # Specifies whether a service account should be created
-#   create: true
+#   clusterRole: edit
 
 # securityContext:
 #   seccompProfile:
