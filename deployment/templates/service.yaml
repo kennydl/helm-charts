@@ -13,4 +13,7 @@ spec:
   ports:
   - port: {{ required "Missing .Values.service.port" .Values.service.port }}
     targetPort: {{ required "Missing .Values.service.targetPort" .Values.service.targetPort }}
+    {{- if kindIs "float64" .Values.service.nodePort }}
+    nodePort: {{ .Values.service.nodePort }}
+    {{- end }}
   {{- end}}
